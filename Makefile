@@ -8,7 +8,8 @@ list:
 	@echo ""
 	@echo "Useful targets:"
 	@echo ""
-	@echo "  install      > install node modules dependencies (node_modules)"
+	@echo "  init         > launch container without starting application"
+	@echo "  install      > install node modules dependencies"
 	@echo "  start        > run a dev server"
 	@echo "  stop         > stop the dev server"
 	@echo "  restart      > restart the dev server"
@@ -18,11 +19,15 @@ list:
 	@echo "  shell        > shell into container"
 	@echo ""
 
+init:
+	@docker build -t angular-setup . && docker run -it --user $(UID):$(GID) \
+	-v $(CURDIR):/project angular-setup bash
+
 install:
 	@docker build -t angular-setup .
 	@docker run --init -it --rm --user $(UID):$(GID) \
 	-v $(CURDIR):/project \
-	-w /project angular-setup npm install
+	-w /project angular-setup npm install & ng analytics off
 
 start:
 	@docker build -t angular-setup . && docker run --init -it --rm --user $(UID):$(GID) \
