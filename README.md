@@ -1,27 +1,28 @@
-# SmallAngularApp
+# Angular-setup
 
-## Install dependencies
+This is a project to set up a new Angular project via Docker.
 
-```console
+## Getting Started
+
+It comes with a Makefile to help you to play easily with your future project :
+
+```bash
+# List of make commands:
+make
+
+# To build project:
 make install
-```
 
-## Start application
-
-The following command will launch a dev server in order to run the application. You can access to it through this url: `0.0.0.0:4200`.
-
-```console
+# To start app:
 make start
 ```
+Open [http://localhost](http://localhost) with your browser to see the result.
 
-## Useful commands
+For the rest, be curious.
 
-To have a list of all available commands:
+## Learn More
 
-```console
-make
-```
-
-## Further help
-
-Need help? You already know my 06 ;)
+- [Angular Documentation](https://angular.io/docs) - learn about Angular features and API.
+- [Learn Angular](https://angular.io/tutorial) - an heroic Angular tutorial.
+- [Angular CLI](https://angular.io/cli) - a command-line interface tool to easily manage Angular application.
+- [Docker](https://docs.docker.com/engine/) - Docker installation documentation.

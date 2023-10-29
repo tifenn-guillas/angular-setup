@@ -1,9 +1,12 @@
-FROM node:16
+FROM node:18
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV NG_CLI_ANALYTICS ci
+ENV NG_FORCE_TTY false
+
+WORKDIR /src
 
 # Angular CLI
-RUN npm install -g @angular/cli
-
+RUN yarn global add @angular/cli -y
+RUN ng analytics disable --global
 
 CMD ["bash"]
